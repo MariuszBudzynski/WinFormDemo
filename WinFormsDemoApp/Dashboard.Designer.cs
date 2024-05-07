@@ -1,6 +1,6 @@
 ﻿namespace WinFormsDemoApp
 {
-	partial class Form1
+	partial class Dashboard
 	{
 		/// <summary>
 		///  Required designer variable.
@@ -28,10 +28,19 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "Form1";
+			SuspendLayout();
+			// 
+			// Dashboard
+			// 
+			AutoScaleDimensions = new SizeF(11F, 25F);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(1257, 750);
+			Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
+			Margin = new Padding(5, 5, 5, 5);
+			Name = "Dashboard";
+			Text = "DemoApp";
+			Load += this.Dashboard_Load;
+			ResumeLayout(false);
 		}
 
 		#endregion
