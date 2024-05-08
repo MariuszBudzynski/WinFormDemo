@@ -38,11 +38,12 @@
 			label2 = new Label();
 			GET = new TextBox();
 			SendGet = new Button();
+			statusStrip1 = new StatusStrip();
 			SuspendLayout();
 			// 
 			// DisplaytextBox
 			// 
-			DisplaytextBox.Location = new Point(12, 279);
+			DisplaytextBox.Location = new Point(12, 103);
 			DisplaytextBox.Multiline = true;
 			DisplaytextBox.Name = "DisplaytextBox";
 			DisplaytextBox.Size = new Size(801, 253);
@@ -83,21 +84,30 @@
 			SendGet.Text = "Send";
 			SendGet.UseVisualStyleBackColor = true;
 			// 
+			// statusStrip1
+			// 
+			statusStrip1.Location = new Point(0, 409);
+			statusStrip1.Name = "statusStrip1";
+			statusStrip1.Size = new Size(845, 22);
+			statusStrip1.TabIndex = 5;
+			statusStrip1.Text = "statusStrip1";
+			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(11F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(845, 750);
+			ClientSize = new Size(845, 431);
+			Controls.Add(statusStrip1);
 			Controls.Add(SendGet);
 			Controls.Add(GET);
 			Controls.Add(label2);
 			Controls.Add(label1);
 			Controls.Add(DisplaytextBox);
 			Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-			Margin = new Padding(5, 5, 5, 5);
+			Margin = new Padding(5);
 			Name = "Dashboard";
 			Text = "DemoApp";
-			Load += this.Dashboard_Load;
+			Load += Dashboard_Load;
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -109,5 +119,6 @@
 		private Label label2;
 		private TextBox GET;
 		private Button SendGet;
+		private StatusStrip statusStrip1;
 	}
 }
