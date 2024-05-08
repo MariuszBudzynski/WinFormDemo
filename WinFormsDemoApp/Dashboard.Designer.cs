@@ -34,80 +34,99 @@
 		private void InitializeComponent()
 		{
 			DisplaytextBox = new TextBox();
-			label1 = new Label();
-			label2 = new Label();
-			GET = new TextBox();
-			SendGet = new Button();
-			statusStrip1 = new StatusStrip();
+			ReguestTypesLabel = new Label();
+			GetLabel = new Label();
+			GETInputBox = new TextBox();
+			SendGetButton = new Button();
+			statusStrip = new StatusStrip();
+			SystemStatus = new ToolStripStatusLabel();
+			statusStrip.SuspendLayout();
 			SuspendLayout();
 			// 
 			// DisplaytextBox
 			// 
+			DisplaytextBox.BackColor = Color.White;
+			DisplaytextBox.BorderStyle = BorderStyle.FixedSingle;
+			DisplaytextBox.Enabled = false;
+			DisplaytextBox.ForeColor = Color.Black;
 			DisplaytextBox.Location = new Point(12, 103);
 			DisplaytextBox.Multiline = true;
 			DisplaytextBox.Name = "DisplaytextBox";
+			DisplaytextBox.ReadOnly = true;
+			DisplaytextBox.ScrollBars = ScrollBars.Both;
 			DisplaytextBox.Size = new Size(801, 253);
 			DisplaytextBox.TabIndex = 0;
 			// 
-			// label1
+			// ReguestTypesLabel
 			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(25, 7);
-			label1.Name = "label1";
-			label1.Size = new Size(130, 25);
-			label1.TabIndex = 1;
-			label1.Text = "Reguest Types";
+			ReguestTypesLabel.AutoSize = true;
+			ReguestTypesLabel.Location = new Point(25, 7);
+			ReguestTypesLabel.Name = "ReguestTypesLabel";
+			ReguestTypesLabel.Size = new Size(130, 25);
+			ReguestTypesLabel.TabIndex = 1;
+			ReguestTypesLabel.Text = "Reguest Types";
 			// 
-			// label2
+			// GetLabel
 			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(25, 45);
-			label2.Name = "label2";
-			label2.Size = new Size(41, 25);
-			label2.TabIndex = 2;
-			label2.Text = "Get";
+			GetLabel.AutoSize = true;
+			GetLabel.Location = new Point(25, 45);
+			GetLabel.Name = "GetLabel";
+			GetLabel.Size = new Size(41, 25);
+			GetLabel.TabIndex = 2;
+			GetLabel.Text = "Get";
 			// 
-			// GET
+			// GETInputBox
 			// 
-			GET.Location = new Point(92, 42);
-			GET.Name = "GET";
-			GET.PlaceholderText = "Enter Get Endpoint";
-			GET.Size = new Size(585, 33);
-			GET.TabIndex = 3;
+			GETInputBox.Location = new Point(92, 42);
+			GETInputBox.Name = "GETInputBox";
+			GETInputBox.PlaceholderText = "Enter Endpoint";
+			GETInputBox.Size = new Size(585, 33);
+			GETInputBox.TabIndex = 3;
 			// 
-			// SendGet
+			// SendGetButton
 			// 
-			SendGet.Location = new Point(716, 42);
-			SendGet.Name = "SendGet";
-			SendGet.Size = new Size(97, 36);
-			SendGet.TabIndex = 4;
-			SendGet.Text = "Send";
-			SendGet.UseVisualStyleBackColor = true;
+			SendGetButton.Location = new Point(716, 42);
+			SendGetButton.Name = "SendGetButton";
+			SendGetButton.Size = new Size(97, 36);
+			SendGetButton.TabIndex = 4;
+			SendGetButton.Text = "Send";
+			SendGetButton.UseVisualStyleBackColor = true;
+			SendGetButton.Click += SendGetButton_Click;
 			// 
-			// statusStrip1
+			// statusStrip
 			// 
-			statusStrip1.Location = new Point(0, 409);
-			statusStrip1.Name = "statusStrip1";
-			statusStrip1.Size = new Size(845, 22);
-			statusStrip1.TabIndex = 5;
-			statusStrip1.Text = "statusStrip1";
+			statusStrip.Items.AddRange(new ToolStripItem[] { SystemStatus });
+			statusStrip.Location = new Point(0, 409);
+			statusStrip.Name = "statusStrip";
+			statusStrip.Size = new Size(845, 22);
+			statusStrip.TabIndex = 5;
+			statusStrip.Text = "statusStrip1";
+			// 
+			// SystemStatus
+			// 
+			SystemStatus.Name = "SystemStatus";
+			SystemStatus.Size = new Size(39, 17);
+			SystemStatus.Text = "Ready";
 			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(11F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = Color.White;
 			ClientSize = new Size(845, 431);
-			Controls.Add(statusStrip1);
-			Controls.Add(SendGet);
-			Controls.Add(GET);
-			Controls.Add(label2);
-			Controls.Add(label1);
+			Controls.Add(statusStrip);
+			Controls.Add(SendGetButton);
+			Controls.Add(GETInputBox);
+			Controls.Add(GetLabel);
+			Controls.Add(ReguestTypesLabel);
 			Controls.Add(DisplaytextBox);
 			Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
 			Margin = new Padding(5);
 			Name = "Dashboard";
 			Text = "DemoApp";
 			Load += Dashboard_Load;
+			statusStrip.ResumeLayout(false);
+			statusStrip.PerformLayout();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -115,10 +134,11 @@
 		#endregion
 
 		private TextBox DisplaytextBox;
-		private Label label1;
-		private Label label2;
-		private TextBox GET;
-		private Button SendGet;
-		private StatusStrip statusStrip1;
+		private Label ReguestTypesLabel;
+		private Label GetLabel;
+		private TextBox GETInputBox;
+		private Button SendGetButton;
+		private StatusStrip statusStrip;
+		private ToolStripStatusLabel SystemStatus;
 	}
 }
