@@ -40,6 +40,7 @@
 			SendGetButton = new Button();
 			statusStrip = new StatusStrip();
 			SystemStatus = new ToolStripStatusLabel();
+			ResponseLabel = new Label();
 			statusStrip.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -47,14 +48,13 @@
 			// 
 			DisplaytextBox.BackColor = Color.White;
 			DisplaytextBox.BorderStyle = BorderStyle.FixedSingle;
-			DisplaytextBox.Enabled = false;
 			DisplaytextBox.ForeColor = Color.Black;
-			DisplaytextBox.Location = new Point(12, 103);
+			DisplaytextBox.Location = new Point(12, 136);
 			DisplaytextBox.Multiline = true;
 			DisplaytextBox.Name = "DisplaytextBox";
 			DisplaytextBox.ReadOnly = true;
 			DisplaytextBox.ScrollBars = ScrollBars.Both;
-			DisplaytextBox.Size = new Size(801, 253);
+			DisplaytextBox.Size = new Size(801, 220);
 			DisplaytextBox.TabIndex = 0;
 			// 
 			// ReguestTypesLabel
@@ -108,12 +108,22 @@
 			SystemStatus.Size = new Size(39, 17);
 			SystemStatus.Text = "Ready";
 			// 
+			// ResponseLabel
+			// 
+			ResponseLabel.AutoSize = true;
+			ResponseLabel.Location = new Point(12, 108);
+			ResponseLabel.Name = "ResponseLabel";
+			ResponseLabel.Size = new Size(91, 25);
+			ResponseLabel.TabIndex = 6;
+			ResponseLabel.Text = "Response";
+			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(11F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
 			ClientSize = new Size(845, 431);
+			Controls.Add(ResponseLabel);
 			Controls.Add(statusStrip);
 			Controls.Add(SendGetButton);
 			Controls.Add(GETInputBox);
@@ -140,5 +150,6 @@
 		private Button SendGetButton;
 		private StatusStrip statusStrip;
 		private ToolStripStatusLabel SystemStatus;
+		private Label ResponseLabel;
 	}
 }

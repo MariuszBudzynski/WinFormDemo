@@ -1,11 +1,12 @@
 using WinFormsDemoApp.Common;
+using WinFormsDemoApp.Common.Interfaces;
 
 namespace WinFormsDemoApp
 {
-	public partial class Dashboard : Form
+    public partial class Dashboard : Form
 	{
-		private APIValidator _validator;
-		private APIHelper _helper;
+		private readonly IAPIValidator _validator = new APIValidator();
+		private readonly IAPIHelper _helper = new APIHelper();
 		public Dashboard()
 		{
 			InitializeComponent();
@@ -14,7 +15,6 @@ namespace WinFormsDemoApp
 
 		private async void SendGetButton_Click(object sender, EventArgs e)
 		{
-			_validator = new APIValidator();
 
 			if (!_validator.ValidateEndpoint(GETInputBox.Text))
 			{
@@ -27,9 +27,7 @@ namespace WinFormsDemoApp
 			{
 				SystemStatus.Text = "Calling API...";
 
-				_helper = new APIHelper();
-
-				var result = await _helper.SendRequestAsync(GETInputBox.Text);
+				var result = await _helper.CallApiAsync(GETInputBox.Text);
 				DisplaytextBox.Text = result;
 
 				SystemStatus.Text = "Ready";
