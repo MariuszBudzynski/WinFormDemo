@@ -1,9 +1,6 @@
-﻿using System.Text.RegularExpressions;
-using WinFormsDemoApp.Common.Interfaces;
-
-namespace WinFormsDemoApp.Common
+﻿namespace WinFormsDemoApp.Common
 {
-    public class APIValidator : IAPIValidator
+	public class APIValidator : IAPIValidator
 	{
 		public bool ValidateEndpoint(string endpoint)
 		{

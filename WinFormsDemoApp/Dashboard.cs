@@ -1,6 +1,3 @@
-using WinFormsDemoApp.Common;
-using WinFormsDemoApp.Common.Interfaces;
-
 namespace WinFormsDemoApp
 {
     public partial class Dashboard : Form

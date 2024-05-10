@@ -1,7 +1,4 @@
-﻿using System.Text.Json;
-using WinFormsDemoApp.Common.Interfaces;
-
-namespace WinFormsDemoApp.Common
+﻿namespace WinFormsDemoApp.Common
 {
     public class APIHelper : IAPIHelper
 	{
