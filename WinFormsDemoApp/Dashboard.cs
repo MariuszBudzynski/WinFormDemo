@@ -5,12 +5,16 @@ namespace WinFormsDemoApp
 {
     public partial class Dashboard : Form
 	{
-		private readonly IAPIValidator _validator = new APIValidator();
-		private readonly IAPIHelper _helper = new APIHelper();
+		private readonly IAPIValidator _validator;
+		private readonly IAPIHelper _helper;
 		public Dashboard()
 		{
 			InitializeComponent();
-		
+			IObjectFactory factory = new ObjectFactory();
+
+			_validator = factory.CreateValidator();
+			_helper = factory.CreateHelper();
+
 		}
 
 		private async void SendGetButton_Click(object sender, EventArgs e)
