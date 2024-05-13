@@ -41,6 +41,11 @@
 			statusStrip = new StatusStrip();
 			SystemStatus = new ToolStripStatusLabel();
 			ResponseLabel = new Label();
+			POSTInputBox = new TextBox();
+			PostLabel = new Label();
+			SendPostButton = new Button();
+			JSON_BodyLabel = new Label();
+			JSON_Input = new TextBox();
 			statusStrip.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -49,12 +54,12 @@
 			DisplaytextBox.BackColor = Color.White;
 			DisplaytextBox.BorderStyle = BorderStyle.FixedSingle;
 			DisplaytextBox.ForeColor = Color.Black;
-			DisplaytextBox.Location = new Point(12, 136);
+			DisplaytextBox.Location = new Point(12, 220);
 			DisplaytextBox.Multiline = true;
 			DisplaytextBox.Name = "DisplaytextBox";
 			DisplaytextBox.ReadOnly = true;
 			DisplaytextBox.ScrollBars = ScrollBars.Both;
-			DisplaytextBox.Size = new Size(801, 220);
+			DisplaytextBox.Size = new Size(801, 136);
 			DisplaytextBox.TabIndex = 0;
 			// 
 			// ReguestTypesLabel
@@ -96,9 +101,9 @@
 			// statusStrip
 			// 
 			statusStrip.Items.AddRange(new ToolStripItem[] { SystemStatus });
-			statusStrip.Location = new Point(0, 409);
+			statusStrip.Location = new Point(0, 422);
 			statusStrip.Name = "statusStrip";
-			statusStrip.Size = new Size(845, 22);
+			statusStrip.Size = new Size(847, 22);
 			statusStrip.TabIndex = 5;
 			statusStrip.Text = "statusStrip1";
 			// 
@@ -111,18 +116,67 @@
 			// ResponseLabel
 			// 
 			ResponseLabel.AutoSize = true;
-			ResponseLabel.Location = new Point(12, 108);
+			ResponseLabel.Location = new Point(12, 183);
 			ResponseLabel.Name = "ResponseLabel";
 			ResponseLabel.Size = new Size(91, 25);
 			ResponseLabel.TabIndex = 6;
 			ResponseLabel.Text = "Response";
+			// 
+			// POSTInputBox
+			// 
+			POSTInputBox.Location = new Point(92, 93);
+			POSTInputBox.Name = "POSTInputBox";
+			POSTInputBox.PlaceholderText = "Enter Endpoint";
+			POSTInputBox.Size = new Size(585, 33);
+			POSTInputBox.TabIndex = 8;
+			// 
+			// PostLabel
+			// 
+			PostLabel.AutoSize = true;
+			PostLabel.Location = new Point(25, 96);
+			PostLabel.Name = "PostLabel";
+			PostLabel.Size = new Size(57, 25);
+			PostLabel.TabIndex = 7;
+			PostLabel.Text = "POST";
+			// 
+			// SendPostButton
+			// 
+			SendPostButton.Location = new Point(716, 93);
+			SendPostButton.Name = "SendPostButton";
+			SendPostButton.Size = new Size(97, 34);
+			SendPostButton.TabIndex = 9;
+			SendPostButton.Text = "Send";
+			SendPostButton.UseVisualStyleBackColor = true;
+			// 
+			// JSON_BodyLabel
+			// 
+			JSON_BodyLabel.AutoSize = true;
+			JSON_BodyLabel.Location = new Point(12, 149);
+			JSON_BodyLabel.Name = "JSON_BodyLabel";
+			JSON_BodyLabel.Size = new Size(104, 25);
+			JSON_BodyLabel.TabIndex = 10;
+			JSON_BodyLabel.Text = "JSON Body";
+			// 
+			// JSON_Input
+			// 
+			JSON_Input.Location = new Point(122, 149);
+			JSON_Input.Name = "JSON_Input";
+			JSON_Input.ScrollBars = ScrollBars.Both;
+			JSON_Input.Size = new Size(683, 33);
+			JSON_Input.TabIndex = 11;
+			JSON_Input.Text = "Enter JSON object";
 			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(11F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
-			ClientSize = new Size(845, 431);
+			ClientSize = new Size(847, 444);
+			Controls.Add(JSON_Input);
+			Controls.Add(JSON_BodyLabel);
+			Controls.Add(SendPostButton);
+			Controls.Add(POSTInputBox);
+			Controls.Add(PostLabel);
 			Controls.Add(ResponseLabel);
 			Controls.Add(statusStrip);
 			Controls.Add(SendGetButton);
@@ -151,5 +205,10 @@
 		private StatusStrip statusStrip;
 		private ToolStripStatusLabel SystemStatus;
 		private Label ResponseLabel;
+		private TextBox POSTInputBox;
+		private Label PostLabel;
+		private Button SendPostButton;
+		private Label JSON_BodyLabel;
+		private TextBox JSON_Input;
 	}
 }
