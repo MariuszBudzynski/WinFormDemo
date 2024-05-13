@@ -54,7 +54,7 @@
 			DisplaytextBox.BackColor = Color.White;
 			DisplaytextBox.BorderStyle = BorderStyle.FixedSingle;
 			DisplaytextBox.ForeColor = Color.Black;
-			DisplaytextBox.Location = new Point(12, 220);
+			DisplaytextBox.Location = new Point(12, 271);
 			DisplaytextBox.Multiline = true;
 			DisplaytextBox.Name = "DisplaytextBox";
 			DisplaytextBox.ReadOnly = true;
@@ -101,9 +101,9 @@
 			// statusStrip
 			// 
 			statusStrip.Items.AddRange(new ToolStripItem[] { SystemStatus });
-			statusStrip.Location = new Point(0, 422);
+			statusStrip.Location = new Point(0, 517);
 			statusStrip.Name = "statusStrip";
-			statusStrip.Size = new Size(847, 22);
+			statusStrip.Size = new Size(856, 22);
 			statusStrip.TabIndex = 5;
 			statusStrip.Text = "statusStrip1";
 			// 
@@ -116,7 +116,7 @@
 			// ResponseLabel
 			// 
 			ResponseLabel.AutoSize = true;
-			ResponseLabel.Location = new Point(12, 183);
+			ResponseLabel.Location = new Point(12, 234);
 			ResponseLabel.Name = "ResponseLabel";
 			ResponseLabel.Size = new Size(91, 25);
 			ResponseLabel.TabIndex = 6;
@@ -147,6 +147,7 @@
 			SendPostButton.TabIndex = 9;
 			SendPostButton.Text = "Send";
 			SendPostButton.UseVisualStyleBackColor = true;
+			SendPostButton.Click += SendPostButton_Click;
 			// 
 			// JSON_BodyLabel
 			// 
@@ -160,18 +161,19 @@
 			// JSON_Input
 			// 
 			JSON_Input.Location = new Point(122, 149);
+			JSON_Input.Multiline = true;
 			JSON_Input.Name = "JSON_Input";
 			JSON_Input.ScrollBars = ScrollBars.Both;
-			JSON_Input.Size = new Size(683, 33);
+			JSON_Input.Size = new Size(683, 82);
 			JSON_Input.TabIndex = 11;
-			JSON_Input.Text = "Enter JSON object";
+			JSON_Input.Text = "{\"name\":value}";
 			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(11F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
-			ClientSize = new Size(847, 444);
+			ClientSize = new Size(856, 539);
 			Controls.Add(JSON_Input);
 			Controls.Add(JSON_BodyLabel);
 			Controls.Add(SendPostButton);

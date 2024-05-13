@@ -1,4 +1,6 @@
-﻿namespace WinFormsDemoApp.Common
+﻿using System.Text;
+
+namespace WinFormsDemoApp.Common
 {
     public class APIHelper : IAPIHelper
 	{
@@ -25,5 +27,18 @@
 				return $"Error: {response.StatusCode}";
 			}
 		}
+
+		public async Task<string> CallApiAsync(string endpoint,string body, bool formatOutput = true, Httpaction action = Httpaction.POST)
+		{
+			HttpContent content = new StringContent(body, Encoding.UTF8, "application/json");
+			HttpResponseMessage response = await _client.PostAsync(endpoint, content);
+			if (response.IsSuccessStatusCode)
+			{
+				return response.StatusCode.ToString();
+			}
+			else return "An Error Occured";
+			
+		}
+
 	}
 }

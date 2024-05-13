@@ -2,7 +2,8 @@
 
 public enum Httpaction
 {
-	GET
+	GET,
+	POST,
 }
 	 
 

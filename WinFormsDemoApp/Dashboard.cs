@@ -1,6 +1,8 @@
+using WinFormsDemoApp.Common;
+
 namespace WinFormsDemoApp
 {
-    public partial class Dashboard : Form
+	public partial class Dashboard : Form
 	{
 		private readonly IAPIValidator _validator;
 		private readonly IAPIHelper _helper;
@@ -29,6 +31,31 @@ namespace WinFormsDemoApp
 				SystemStatus.Text = "Calling API...";
 
 				var result = await _helper.CallApiAsync(GETInputBox.Text);
+				DisplaytextBox.Text = result;
+
+				SystemStatus.Text = "Ready";
+			}
+			catch (Exception ex)
+			{
+				DisplaytextBox.Text = "Error: " + ex.Message;
+				SystemStatus.Text = "Error";
+			}
+		}
+
+		private async void SendPostButton_Click(object sender, EventArgs e)
+		{
+			if (!_validator.ValidateEndpoint(POSTInputBox.Text))
+			{
+				SystemStatus.Text = "Error";
+				DisplaytextBox.Text = "Enter proper Endpoint";
+				return;
+			}
+
+			try
+			{
+				SystemStatus.Text = "Calling API...";
+
+				var result = await _helper.CallApiAsync(POSTInputBox.Text,JSON_Input.Text);
 				DisplaytextBox.Text = result;
 
 				SystemStatus.Text = "Ready";
