@@ -46,6 +46,9 @@
 			SendPostButton = new Button();
 			JSON_BodyLabel = new Label();
 			JSON_Input = new TextBox();
+			SendDeleteButton = new Button();
+			DELETEInputBox = new TextBox();
+			DeleteLabel = new Label();
 			statusStrip.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -54,7 +57,7 @@
 			DisplaytextBox.BackColor = Color.White;
 			DisplaytextBox.BorderStyle = BorderStyle.FixedSingle;
 			DisplaytextBox.ForeColor = Color.Black;
-			DisplaytextBox.Location = new Point(12, 271);
+			DisplaytextBox.Location = new Point(25, 363);
 			DisplaytextBox.Multiline = true;
 			DisplaytextBox.Name = "DisplaytextBox";
 			DisplaytextBox.ReadOnly = true;
@@ -82,10 +85,10 @@
 			// 
 			// GETInputBox
 			// 
-			GETInputBox.Location = new Point(92, 42);
+			GETInputBox.Location = new Point(111, 42);
 			GETInputBox.Name = "GETInputBox";
 			GETInputBox.PlaceholderText = "Enter Endpoint";
-			GETInputBox.Size = new Size(585, 33);
+			GETInputBox.Size = new Size(566, 33);
 			GETInputBox.TabIndex = 3;
 			// 
 			// SendGetButton
@@ -116,7 +119,7 @@
 			// ResponseLabel
 			// 
 			ResponseLabel.AutoSize = true;
-			ResponseLabel.Location = new Point(12, 234);
+			ResponseLabel.Location = new Point(25, 326);
 			ResponseLabel.Name = "ResponseLabel";
 			ResponseLabel.Size = new Size(91, 25);
 			ResponseLabel.TabIndex = 6;
@@ -124,10 +127,10 @@
 			// 
 			// POSTInputBox
 			// 
-			POSTInputBox.Location = new Point(92, 93);
+			POSTInputBox.Location = new Point(111, 93);
 			POSTInputBox.Name = "POSTInputBox";
 			POSTInputBox.PlaceholderText = "Enter Endpoint";
-			POSTInputBox.Size = new Size(585, 33);
+			POSTInputBox.Size = new Size(566, 33);
 			POSTInputBox.TabIndex = 8;
 			// 
 			// PostLabel
@@ -152,7 +155,7 @@
 			// JSON_BodyLabel
 			// 
 			JSON_BodyLabel.AutoSize = true;
-			JSON_BodyLabel.Location = new Point(12, 149);
+			JSON_BodyLabel.Location = new Point(25, 241);
 			JSON_BodyLabel.Name = "JSON_BodyLabel";
 			JSON_BodyLabel.Size = new Size(104, 25);
 			JSON_BodyLabel.TabIndex = 10;
@@ -160,7 +163,7 @@
 			// 
 			// JSON_Input
 			// 
-			JSON_Input.Location = new Point(122, 149);
+			JSON_Input.Location = new Point(135, 241);
 			JSON_Input.Multiline = true;
 			JSON_Input.Name = "JSON_Input";
 			JSON_Input.ScrollBars = ScrollBars.Both;
@@ -168,12 +171,41 @@
 			JSON_Input.TabIndex = 11;
 			JSON_Input.Text = "{\"name\":value}";
 			// 
+			// SendDeleteButton
+			// 
+			SendDeleteButton.Location = new Point(716, 153);
+			SendDeleteButton.Name = "SendDeleteButton";
+			SendDeleteButton.Size = new Size(97, 34);
+			SendDeleteButton.TabIndex = 14;
+			SendDeleteButton.Text = "Send";
+			SendDeleteButton.UseVisualStyleBackColor = true;
+			// 
+			// DELETEInputBox
+			// 
+			DELETEInputBox.Location = new Point(111, 153);
+			DELETEInputBox.Name = "DELETEInputBox";
+			DELETEInputBox.PlaceholderText = "Enter Endpoint";
+			DELETEInputBox.Size = new Size(566, 33);
+			DELETEInputBox.TabIndex = 13;
+			// 
+			// DeleteLabel
+			// 
+			DeleteLabel.AutoSize = true;
+			DeleteLabel.Location = new Point(25, 156);
+			DeleteLabel.Name = "DeleteLabel";
+			DeleteLabel.Size = new Size(74, 25);
+			DeleteLabel.TabIndex = 12;
+			DeleteLabel.Text = "DELETE";
+			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(11F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
 			ClientSize = new Size(856, 539);
+			Controls.Add(SendDeleteButton);
+			Controls.Add(DELETEInputBox);
+			Controls.Add(DeleteLabel);
 			Controls.Add(JSON_Input);
 			Controls.Add(JSON_BodyLabel);
 			Controls.Add(SendPostButton);
@@ -212,5 +244,8 @@
 		private Button SendPostButton;
 		private Label JSON_BodyLabel;
 		private TextBox JSON_Input;
+		private Button SendDeleteButton;
+		private TextBox DELETEInputBox;
+		private Label DeleteLabel;
 	}
 }

@@ -30,7 +30,7 @@ namespace WinFormsDemoApp
 			{
 				SystemStatus.Text = "Calling API...";
 
-				var result = await _helper.CallApiAsync(GETInputBox.Text,true,Httpaction.GET);
+				var result = await _helper.CallApiAsync(GETInputBox.Text, true, Httpaction.GET);
 				DisplaytextBox.Text = result;
 
 				SystemStatus.Text = "Ready";
@@ -55,7 +55,7 @@ namespace WinFormsDemoApp
 			{
 				SystemStatus.Text = "Calling API...";
 
-				var result = await _helper.CallApiAsync(POSTInputBox.Text,JSON_Input.Text,false,Httpaction.POST);
+				var result = await _helper.CallApiAsync(POSTInputBox.Text, JSON_Input.Text, false, Httpaction.POST);
 				DisplaytextBox.Text = result;
 
 				SystemStatus.Text = "Ready";
@@ -66,5 +66,7 @@ namespace WinFormsDemoApp
 				SystemStatus.Text = "Error";
 			}
 		}
+
+	
 	}
 }
