@@ -19,22 +19,22 @@ namespace WinFormsDemoApp
 
 		private async void SendGetButton_Click(object sender, EventArgs e)
 		{
-			await CallApiAsync(GETInputBox.Text,HttpAction.GET,true);
+			await CallApiInternalAsync(GETInputBox.Text,HttpAction.GET,true);
 		}
 
 		private async void SendPostButton_Click(object sender, EventArgs e)
 		{
-			await CallApiAsync(POSTInputBox.Text,HttpAction.POST,false, JSON_Input.Text);
+			await CallApiInternalAsync(POSTInputBox.Text,HttpAction.POST,false, JSON_Input.Text);
 		}
 
 		private async void SendDeleteButton_Click(object sender, EventArgs e)
 		{
-			await CallApiAsync(DELETEInputBox.Text, HttpAction.DELETE);
+			await CallApiInternalAsync(DELETEInputBox.Text, HttpAction.DELETE);
 		}
 
 
 
-		private async Task CallApiAsync(string endpoint, HttpAction action, bool formatOutput = false, string body = null)
+		private async Task CallApiInternalAsync(string endpoint, HttpAction action, bool formatOutput = false, string body = null)
 		{
 			if (!_validator.ValidateEndpoint(endpoint))
 			{
