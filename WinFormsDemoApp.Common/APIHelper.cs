@@ -6,7 +6,7 @@ namespace WinFormsDemoApp.Common
 	{
 		private readonly HttpClient _client = new();
 
-		public async Task<string> CallApiAsync(string endpoint, bool formatOutput = true, Httpaction action = Httpaction.GET)
+		public async Task<string> CallApiAsync(string endpoint, bool formatOutput = true, HttpAction action = HttpAction.GET)
 		{
 			HttpResponseMessage response = await _client.GetAsync(endpoint);
 
@@ -28,7 +28,7 @@ namespace WinFormsDemoApp.Common
 			}
 		}
 
-		public async Task<string> CallApiAsync(string endpoint,string body, bool formatOutput = true, Httpaction action = Httpaction.POST)
+		public async Task<string> CallApiAsync(string endpoint,string body, HttpAction action = HttpAction.POST)
 		{
 			HttpContent content = new StringContent(body, Encoding.UTF8, "application/json");
 			HttpResponseMessage response = await _client.PostAsync(endpoint, content);
@@ -38,6 +38,18 @@ namespace WinFormsDemoApp.Common
 			}
 			else return "An Error Occured";
 			
+		}
+
+		public async Task<string> CallApiAsync(string endpoint, HttpAction action = HttpAction.DELETE)
+		{
+			HttpResponseMessage response = await _client.DeleteAsync(endpoint);
+
+			if (response.IsSuccessStatusCode)
+			{
+				return response.StatusCode.ToString();
+			}
+			else return "An Error Occured";
+
 		}
 
 	}

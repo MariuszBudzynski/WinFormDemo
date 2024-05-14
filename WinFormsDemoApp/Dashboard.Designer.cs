@@ -179,6 +179,7 @@
 			SendDeleteButton.TabIndex = 14;
 			SendDeleteButton.Text = "Send";
 			SendDeleteButton.UseVisualStyleBackColor = true;
+			SendDeleteButton.Click += SendDeleteButton_Click;
 			// 
 			// DELETEInputBox
 			// 

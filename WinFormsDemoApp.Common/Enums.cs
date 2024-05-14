@@ -1,9 +1,10 @@
 ﻿namespace WinFormsDemoApp.Common;
 
-public enum Httpaction
+public enum HttpAction
 {
 	GET,
 	POST,
+	DELETE
 }
 	 
 

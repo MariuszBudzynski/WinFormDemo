@@ -16,35 +16,27 @@ namespace WinFormsDemoApp
 
 		}
 
+
 		private async void SendGetButton_Click(object sender, EventArgs e)
 		{
-
-			if (!_validator.ValidateEndpoint(GETInputBox.Text))
-			{
-				SystemStatus.Text = "Error";
-				DisplaytextBox.Text = "Enter proper Endpoint";
-				return;
-			}
-
-			try
-			{
-				SystemStatus.Text = "Calling API...";
-
-				var result = await _helper.CallApiAsync(GETInputBox.Text, true, Httpaction.GET);
-				DisplaytextBox.Text = result;
-
-				SystemStatus.Text = "Ready";
-			}
-			catch (Exception ex)
-			{
-				DisplaytextBox.Text = "Error: " + ex.Message;
-				SystemStatus.Text = "Error";
-			}
+			await CallApiAsync(GETInputBox.Text,HttpAction.GET,true);
 		}
 
 		private async void SendPostButton_Click(object sender, EventArgs e)
 		{
-			if (!_validator.ValidateEndpoint(POSTInputBox.Text))
+			await CallApiAsync(POSTInputBox.Text,HttpAction.POST,false, JSON_Input.Text);
+		}
+
+		private async void SendDeleteButton_Click(object sender, EventArgs e)
+		{
+			await CallApiAsync(DELETEInputBox.Text, HttpAction.DELETE);
+		}
+
+
+
+		private async Task CallApiAsync(string endpoint, HttpAction action, bool formatOutput = false, string body = null)
+		{
+			if (!_validator.ValidateEndpoint(endpoint))
 			{
 				SystemStatus.Text = "Error";
 				DisplaytextBox.Text = "Enter proper Endpoint";
@@ -55,7 +47,11 @@ namespace WinFormsDemoApp
 			{
 				SystemStatus.Text = "Calling API...";
 
-				var result = await _helper.CallApiAsync(POSTInputBox.Text, JSON_Input.Text, false, Httpaction.POST);
+				var result = action == HttpAction.GET ? await _helper.CallApiAsync(GETInputBox.Text, true, HttpAction.GET) :
+							 action == HttpAction.POST ? await _helper.CallApiAsync(POSTInputBox.Text, JSON_Input.Text, HttpAction.POST) :
+							 action == HttpAction.DELETE ? await _helper.CallApiAsync(DELETEInputBox.Text, HttpAction.DELETE) : null;
+
+
 				DisplaytextBox.Text = result;
 
 				SystemStatus.Text = "Ready";
@@ -66,7 +62,6 @@ namespace WinFormsDemoApp
 				SystemStatus.Text = "Error";
 			}
 		}
-
-	
 	}
+
 }
