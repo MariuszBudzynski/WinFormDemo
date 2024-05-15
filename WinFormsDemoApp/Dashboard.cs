@@ -9,6 +9,7 @@ namespace WinFormsDemoApp
 		public Dashboard()
 		{
 			InitializeComponent();
+			POST_PATCH.Text = POST_PATCH.Items[0].ToString();
 			IObjectFactory factory = new ObjectFactory();
 
 			_validator = factory.CreateValidator();
