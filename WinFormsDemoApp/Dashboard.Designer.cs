@@ -41,8 +41,8 @@
 			statusStrip = new StatusStrip();
 			SystemStatus = new ToolStripStatusLabel();
 			ResponseLabel = new Label();
-			POSTInputBox = new TextBox();
-			SendPostButton = new Button();
+			POST_PATCHInputBox = new TextBox();
+			SendPost_PatchButton = new Button();
 			JSON_BodyLabel = new Label();
 			JSON_Input = new TextBox();
 			SendDeleteButton = new Button();
@@ -125,23 +125,23 @@
 			ResponseLabel.TabIndex = 6;
 			ResponseLabel.Text = "Response";
 			// 
-			// POSTInputBox
+			// POST_PATCHInputBox
 			// 
-			POSTInputBox.Location = new Point(111, 93);
-			POSTInputBox.Name = "POSTInputBox";
-			POSTInputBox.PlaceholderText = "Enter Endpoint";
-			POSTInputBox.Size = new Size(566, 33);
-			POSTInputBox.TabIndex = 8;
+			POST_PATCHInputBox.Location = new Point(111, 93);
+			POST_PATCHInputBox.Name = "POST_PATCHInputBox";
+			POST_PATCHInputBox.PlaceholderText = "Enter Endpoint";
+			POST_PATCHInputBox.Size = new Size(566, 33);
+			POST_PATCHInputBox.TabIndex = 8;
 			// 
-			// SendPostButton
+			// SendPost_PatchButton
 			// 
-			SendPostButton.Location = new Point(716, 93);
-			SendPostButton.Name = "SendPostButton";
-			SendPostButton.Size = new Size(97, 34);
-			SendPostButton.TabIndex = 9;
-			SendPostButton.Text = "Send";
-			SendPostButton.UseVisualStyleBackColor = true;
-			SendPostButton.Click += SendPostButton_Click;
+			SendPost_PatchButton.Location = new Point(716, 93);
+			SendPost_PatchButton.Name = "SendPost_PatchButton";
+			SendPost_PatchButton.Size = new Size(97, 34);
+			SendPost_PatchButton.TabIndex = 9;
+			SendPost_PatchButton.Text = "Send";
+			SendPost_PatchButton.UseVisualStyleBackColor = true;
+			SendPost_PatchButton.Click += SendPost_PatchButton_Click;
 			// 
 			// JSON_BodyLabel
 			// 
@@ -211,8 +211,8 @@
 			Controls.Add(DeleteLabel);
 			Controls.Add(JSON_Input);
 			Controls.Add(JSON_BodyLabel);
-			Controls.Add(SendPostButton);
-			Controls.Add(POSTInputBox);
+			Controls.Add(SendPost_PatchButton);
+			Controls.Add(POST_PATCHInputBox);
 			Controls.Add(ResponseLabel);
 			Controls.Add(statusStrip);
 			Controls.Add(SendGetButton);
@@ -241,8 +241,8 @@
 		private StatusStrip statusStrip;
 		private ToolStripStatusLabel SystemStatus;
 		private Label ResponseLabel;
-		private TextBox POSTInputBox;
-		private Button SendPostButton;
+		private TextBox POST_PATCHInputBox;
+		private Button SendPost_PatchButton;
 		private Label JSON_BodyLabel;
 		private TextBox JSON_Input;
 		private Button SendDeleteButton;
