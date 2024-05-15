@@ -25,7 +25,9 @@ namespace WinFormsDemoApp
 
 		private async void SendPostButton_Click(object sender, EventArgs e)
 		{
-			await CallApiInternalAsync(POSTInputBox.Text,HttpAction.POST,false, JSON_Input.Text);
+			HttpAction selectedOption = POST_PATCH.Text == "POST" ? HttpAction.POST : HttpAction.PATCH;
+
+			await CallApiInternalAsync(POSTInputBox.Text, selectedOption, false, JSON_Input.Text);
 		}
 
 		private async void SendDeleteButton_Click(object sender, EventArgs e)
@@ -50,6 +52,7 @@ namespace WinFormsDemoApp
 
 				var result = action == HttpAction.GET ? await _helper.CallApiAsync(GETInputBox.Text, true, HttpAction.GET) :
 							 action == HttpAction.POST ? await _helper.CallApiAsync(POSTInputBox.Text, JSON_Input.Text, HttpAction.POST) :
+							 action == HttpAction.PATCH ? await _helper.CallApiAsync(POSTInputBox.Text, JSON_Input.Text, HttpAction.PATCH) :
 							 action == HttpAction.DELETE ? await _helper.CallApiAsync(DELETEInputBox.Text, HttpAction.DELETE) : null;
 
 

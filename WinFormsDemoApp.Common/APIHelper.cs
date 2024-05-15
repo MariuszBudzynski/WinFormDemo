@@ -28,10 +28,11 @@ namespace WinFormsDemoApp.Common
 			}
 		}
 
-		public async Task<string> CallApiAsync(string endpoint,string body, HttpAction action = HttpAction.POST)
+		public async Task<string> CallApiAsync(string endpoint,string body, HttpAction action)
 		{
 			HttpContent content = new StringContent(body, Encoding.UTF8, "application/json");
-			HttpResponseMessage response = await _client.PostAsync(endpoint, content);
+			HttpResponseMessage response = action == HttpAction.POST ? await _client.PostAsync(endpoint, content)
+										: await _client.PatchAsync(endpoint, content);
 			if (response.IsSuccessStatusCode)
 			{
 				return response.StatusCode.ToString();
