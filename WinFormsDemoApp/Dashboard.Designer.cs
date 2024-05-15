@@ -42,13 +42,13 @@
 			SystemStatus = new ToolStripStatusLabel();
 			ResponseLabel = new Label();
 			POSTInputBox = new TextBox();
-			PostLabel = new Label();
 			SendPostButton = new Button();
 			JSON_BodyLabel = new Label();
 			JSON_Input = new TextBox();
 			SendDeleteButton = new Button();
 			DELETEInputBox = new TextBox();
 			DeleteLabel = new Label();
+			POST_PATCH = new ComboBox();
 			statusStrip.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -133,15 +133,6 @@
 			POSTInputBox.Size = new Size(566, 33);
 			POSTInputBox.TabIndex = 8;
 			// 
-			// PostLabel
-			// 
-			PostLabel.AutoSize = true;
-			PostLabel.Location = new Point(25, 96);
-			PostLabel.Name = "PostLabel";
-			PostLabel.Size = new Size(57, 25);
-			PostLabel.TabIndex = 7;
-			PostLabel.Text = "POST";
-			// 
 			// SendPostButton
 			// 
 			SendPostButton.Location = new Point(716, 93);
@@ -198,12 +189,23 @@
 			DeleteLabel.TabIndex = 12;
 			DeleteLabel.Text = "DELETE";
 			// 
+			// POST_PATCH
+			// 
+			POST_PATCH.DropDownStyle = ComboBoxStyle.DropDownList;
+			POST_PATCH.FormattingEnabled = true;
+			POST_PATCH.Items.AddRange(new object[] { "POST", "PATCH" });
+			POST_PATCH.Location = new Point(25, 93);
+			POST_PATCH.Name = "POST_PATCH";
+			POST_PATCH.Size = new Size(74, 33);
+			POST_PATCH.TabIndex = 15;
+			// 
 			// Dashboard
 			// 
 			AutoScaleDimensions = new SizeF(11F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
 			ClientSize = new Size(856, 539);
+			Controls.Add(POST_PATCH);
 			Controls.Add(SendDeleteButton);
 			Controls.Add(DELETEInputBox);
 			Controls.Add(DeleteLabel);
@@ -211,7 +213,6 @@
 			Controls.Add(JSON_BodyLabel);
 			Controls.Add(SendPostButton);
 			Controls.Add(POSTInputBox);
-			Controls.Add(PostLabel);
 			Controls.Add(ResponseLabel);
 			Controls.Add(statusStrip);
 			Controls.Add(SendGetButton);
@@ -241,12 +242,12 @@
 		private ToolStripStatusLabel SystemStatus;
 		private Label ResponseLabel;
 		private TextBox POSTInputBox;
-		private Label PostLabel;
 		private Button SendPostButton;
 		private Label JSON_BodyLabel;
 		private TextBox JSON_Input;
 		private Button SendDeleteButton;
 		private TextBox DELETEInputBox;
 		private Label DeleteLabel;
+		private ComboBox POST_PATCH;
 	}
 }
