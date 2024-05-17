@@ -1,6 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
-using System.Windows.Forms.Design;
-
 namespace WinFormsDemoApp
 {
 	internal static class Program

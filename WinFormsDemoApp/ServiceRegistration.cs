@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System.Windows.Forms.Design;
-using WinFormsDemoApp.Common;
-
-namespace WinFormsDemoApp
+﻿namespace WinFormsDemoApp
 {
 	public static class ServiceRegistration
 	{

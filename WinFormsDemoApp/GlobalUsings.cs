@@ -1,2 +1,3 @@
 ﻿global using WinFormsDemoApp.Common.Interfaces;
-global using WinFormsDemoApp.Common.Factory;
+global using WinFormsDemoApp.Common;
+global  using Microsoft.Extensions.DependencyInjection;

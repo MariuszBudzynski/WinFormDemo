@@ -1,7 +1,3 @@
-using Moq;
-using WinFormsDemoApp.Common;
-using WinFormsDemoApp.Common.Interfaces;
-
 namespace WinFormsDemoApp.Tests
 {
 	public class APICallsTests

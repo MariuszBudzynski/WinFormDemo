@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace WinFormsDemoApp.Common
+﻿namespace WinFormsDemoApp.Common
 {
     public class APIHelper : IAPIHelper
 	{
