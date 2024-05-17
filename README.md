@@ -16,4 +16,6 @@
 1. Clone this repository.
 2. Run the app.
 
+![alt text](image.png)
+
 - The working application is also available in the Release section. You can download and run it from the exe file.
