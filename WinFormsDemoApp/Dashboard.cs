@@ -6,14 +6,13 @@ namespace WinFormsDemoApp
 	{
 		private readonly IAPIValidator _validator;
 		private readonly IAPIHelper _helper;
-		public Dashboard()
+		public Dashboard(IAPIHelper apiHelper, IAPIValidator apiValidator)
 		{
 			InitializeComponent();
 			POST_PATCH.Text = POST_PATCH.Items[0].ToString();
-			IObjectFactory factory = new ObjectFactory();
 
-			_validator = factory.CreateValidator();
-			_helper = factory.CreateHelper();
+			_validator = apiValidator;
+			_helper = apiHelper;
 
 		}
 

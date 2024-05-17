@@ -1,3 +1,6 @@
+using Microsoft.Extensions.DependencyInjection;
+using System.Windows.Forms.Design;
+
 namespace WinFormsDemoApp
 {
 	internal static class Program
@@ -10,8 +13,11 @@ namespace WinFormsDemoApp
 		{
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.
+			var serviceProvider = ServiceRegistration.ConfigureServices();
+			
 			ApplicationConfiguration.Initialize();
-			Application.Run(new Dashboard());
+			var dashboard = serviceProvider.GetRequiredService<Dashboard>();
+			Application.Run(dashboard);
 		}
 	}
 }

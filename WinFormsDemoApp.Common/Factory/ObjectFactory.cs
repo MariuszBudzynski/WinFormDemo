@@ -2,7 +2,8 @@
 {
     public class ObjectFactory : IObjectFactory
     {
-        public IAPIValidator CreateValidator()
+		// "Since I have implemented DI, the Factory is no longer needed, but I will leave it as a reference."
+		public IAPIValidator CreateValidator()
         {
             return new APIValidator();
         }
