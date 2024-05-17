@@ -1,4 +1,4 @@
-"I prepared this application to familiarize myself with the older WinForms technology. The application is a simpler clone of Postman."
+I prepared this application to familiarize myself with the older WinForms technology. The application is a simpler clone of Postman.
 
 ## Technologies used:
 
